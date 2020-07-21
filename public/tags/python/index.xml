@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on 胖熊的秘密基地</title>
+    <link>/tags/python/</link>
+    <description>Recent content in Python on 胖熊的秘密基地</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 21 Jul 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>胖熊50</title>
+      <link>/post/step1/</link>
+      <pubDate>Tue, 21 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/post/step1/</guid>
+      <description> 還是想要投資健康的公司 投資相對健全的公司總是可以帶給自己心靈上的安全感，因此第一步還是希望能夠利用財報資料找出體質相對健全的企業。但財報指標實在太多，光是理解各個指標的意義就已經夠難了，更不要提找出有用的指標來判斷哪個股票會漲了。
+既然不知道哪個比較重要，也懶得學看財報，那就用機器學習的方法來看好了。第一個想到的簡單策略就是以年為單位，製作用財報指標投資獲利狀況的機器學習模型。然後從中挑選值得投資的公司。
+ 胖熊50 在網路上利用程式來投資的課程時，用來回測的情境都是以市場上全部的股票為標的，挑出數十檔股票投資以分散風險。但現實上胖熊預算有限，能夠拿來投資的資金有限，盡可能地縮減投資標的數目成了重要的課題。
+台灣ETF中最熱門的0050追蹤台灣50指數，該指數挑出台股裡面市值前50大的公司作為投資標的。套用在機器學習的模型上，就是希望利用機器學習挑出50家該年度中最值得投資的公司。為了自我滿足，就先稱這個還沒有誕生的標的列表為胖熊50吧！
+ </description>
+    </item>
+    
+  </channel>
+</rss>
