@@ -31,7 +31,7 @@ footnotereturnlinkcontents = "↩"
 
 [params]
     description = "希望這裡永遠都不會被人發現"
-    footer = "&copy; SC 2020"
+    footer = "&copy; SC 2021"
 
   highlightjsVersion = "9.12.0"
   highlightjsCDN = "//cdn.bootcss.com"
