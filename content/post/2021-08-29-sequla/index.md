@@ -3,7 +3,7 @@ title: 終於看到了斯卡羅第一、二集
 author: PBK
 date: '2021-08-29'
 slug: sequla
-categories: [追劇]
+categories: 追劇心得
 tags:
   - Sequla
   - 斯卡羅
