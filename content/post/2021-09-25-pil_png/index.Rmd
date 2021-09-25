@@ -1,0 +1,32 @@
+---
+title: Python-如何解決PIL中顯示透明背景PNG檔會一片黑的問題
+author: PBK
+date: '2021-09-25'
+slug: pil_png
+categories:
+  - Python
+tags:
+  - PNG
+  - PIL
+---
+最近嘗試用Python的Python Imaging Library (PIL) 操作在如何畫面顯示圖片及後續操作。如果是JPG檔之類的問題，基本上沒有什麼問題，只要用:
+
+```{Python}
+from PIL import Image
+im = Image.open('image.jpg') # a 200 x 200 png file
+im.show()
+```
+
+就可以在螢幕上顯示被讀取的image.jpg檔。
+
+但是在讀取背景是透明的png檔案時，顯示出來的畫面會是一片黑。這是因為png檔案中的代表背景資訊的alpha channel值在透明背景的圖片時，都會是0，直接用Image.open()的預設值讀取並顯示時，這些0會被當作是代表黑色的0。
+
+在不對原本的PNG檔做額外處理的前提下，保留其透明背景的特徵，正常顯示PNG檔的方式也很簡單，就是把同一個檔案當成是mask貼上原本的PNG檔案，在顯示貼上mask後的檔案即可。
+
+```{Python}
+new_im = im.copy()
+new_im.paste(new_im, (200, 200), im)
+new_im.show()
+```
+
+即使是這麼簡單的方法，也是google了一陣子才找，不過總覺得還有更簡單的解決辦法就是了......
