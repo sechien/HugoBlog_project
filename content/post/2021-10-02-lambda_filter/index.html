@@ -1,0 +1,53 @@
+---
+title: Python memo- 利用lambda function做資料選取
+author: PBK
+date: '2021-10-02'
+slug: lambda_filter
+categories:
+  - Python
+tags: 
+  - Lambda function
+  - filter
+---
+
+<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+
+
+<div id="資料處理的常見問題" class="section level1">
+<h1>資料處理的常見問題</h1>
+<p>處理簡單數據時常會有從現有的資料中挑選出符合特定條件的數據的需求，例如從由很多數字元素構成的list中挑出大於0的元素，然後組成一個新列表。最直覺的方式是用一個for 迴圈檢查list裡面所有的元素。這個方法唯一的缺點是如果在處理資料時需要做很多次資料篩選，就會看到很多for迴圈，然後會覺得有點煩(認真)。因此如果可以把這個步驟寫的簡短一點，心情上會比較好。</p>
+<div id="解決之道-python" class="section level2">
+<h2>解決之道@ Python</h2>
+<p>解決這個問題的方法之一，就是利用Python和C#、Java等程式語言都支援的Lambda function(匿名函數)。Lambda function指不需要定義名稱，可以在一行之內完成的運算式。配合Python內建的filter method，就可以在一行之內完成選取資料的動作。</p>
+</div>
+<div id="lambda-function" class="section level2">
+<h2>Lambda function</h2>
+<p>Python中的Lambda function 語法為：</p>
+<pre class="python"><code>lambda parameter_list: expression</code></pre>
+<p>parameter_list是要傳入lambda function的參數，expression就是函數中的運算式。</p>
+</div>
+<div id="filter-method" class="section level2">
+<h2>filter method</h2>
+<p>filter method的語法為：</p>
+<pre class="python"><code>filter(function, iterable)</code></pre>
+<p>function指要傳入filter的函數，iterable則是指如list、sets、tuple等的可疊代(iterable)物件。filter函數會抓取傳進去的iterable object中，符合function中運算條件結果的元素。</p>
+</div>
+</div>
+<div id="filter-lambda" class="section level1">
+<h1>filter + lambda</h1>
+<p>所以解決上述問題的辦法，就是把篩選資料的條件運算寫成lambda function和傳入filter，就可以用一行指令完成篩選資料的動作。</p>
+<pre class="python"><code>filter(lambda parameter: expression, iterable)</code></pre>
+<div id="範例" class="section level2">
+<h2>範例</h2>
+<p>如果要從一個由數字組成的list中選出數字為0的元素，並回傳一個新的list，就可以這樣寫：</p>
+<pre class="python"><code>number = [1,2,0,3,4]
+pick_zero = filter(lambda x: x==0, number)
+print(list(pick_zero)) # a list contains 0</code></pre>
+<p>filter會把number的每一個元素傳入lambda function中，回傳符合條件的元素(等於0)，完成資料的篩選。</p>
+</div>
+</div>
+<div id="參考資料" class="section level1">
+<h1>參考資料</h1>
+<p><a href="https://www.programiz.com/python-programming/methods/built-in/filter" class="uri">https://www.programiz.com/python-programming/methods/built-in/filter</a>
+<a href="https://www.learncodewithmike.com/2019/12/python-lambda-functions.html" class="uri">https://www.learncodewithmike.com/2019/12/python-lambda-functions.html</a></p>
+</div>
